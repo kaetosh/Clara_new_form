@@ -111,9 +111,8 @@ class FileSelectTrainModal(ModalScreen[Optional[Path]]):
     def on_button_pressed(self, event: Button.Pressed):
         if event.button.id == "button-select-tree-file-select-train-modal":
             self.app.notify("Ожидайте завершение обучения. Процесс может занять несколько минут.", title="Статус")
-            self.app.pop_screen()
             self.app.push_screen(LoaderIndicatorCustom())
-            self.process_file(self.app.selected_path_file_train)  # Запускаем фоновую задачу
+            self.process_file(self.app.selected_path_file_train)  # Запускаем фоновую задачу   
         elif event.button.id == "button-cancel-tree-file-select-train-modal":
             while len(self.app.screen_stack) > 1:
                 self.app.pop_screen()
@@ -305,9 +304,9 @@ class FileSelectModelModal(ModalScreen[Optional[Path]]):
     def on_mount(self):
         # Отключаем кнопку пока файл не выбран
         self.query_one("#button-select-file-select-model-modal").disabled = True
-        self.query_one("#tree-file-select-model-modal").ICON_FILE = '◼ '
-        self.query_one("#tree-file-select-model-modal").ICON_NODE = '▼ '
-        self.query_one("#tree-file-select-model-modal").ICON_NODE_EXPANDED = '▶ '
+        self.query_one("#tree-file-select-model-modal").ICON_FILE = '🎓 '
+        # self.query_one("#tree-file-select-model-modal").ICON_NODE = '▼ '
+        # self.query_one("#tree-file-select-model-modal").ICON_NODE_EXPANDED = '▶ '
 
     def on_directory_tree_file_selected(self, event: JoblibDirectoryTree.FileSelected):
         """Обработчик выбора файла"""
