@@ -72,10 +72,10 @@ Clara — это приложение для автоматической кла
 ---
 ## Установка
 
-1. Скопируйте репозиторий [https://github.com/kaetosh/ExcelAggregator-v2.git](https://github.com/kaetosh/ClsTextual.git)
-2. Установите необходимые библиотеки ```pip install -r requirements.txt```
-3. Сформируйте exe-файл для удобного использования приложения ```pyinstaller --clean main.spec```.
-4. Запустите exe-файл main.exe из папки dist
+1. Скопируйте репозиторий ```https://github.com/kaetosh/Clara_new_form.git```
+2. Установите необходимые библиотеки (nuitka для компиляции в exe работает пока только на python 3.13) ```pip install -r requirements.txt```
+3. Сформируйте exe-файл для удобного использования приложения ```nuitka --standalone --include-package=pymorphy3_dicts_ru --include-data-dir=.venv313\Lib\site-packages\pymorphy3_dicts_ru=pymorphy3_dicts_ru main.py```.
+4. Запустите exe-файл main.exe из папки main.dist
 ---
 
 ## Рекомендации
@@ -100,3 +100,4 @@ telegram: @kaetosh
 ---
 
 Спасибо за использование Clara!
+
